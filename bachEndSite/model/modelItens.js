@@ -10,12 +10,20 @@ const modelItens = connection.define(
             primaryKey:true,
             autoIncrement:true
         },
+        cod_categoria:{
+            type: Sequelize.INTEGER,
+            allowNull: false
+        },
         nome_item:{
             type:Sequelize.STRING(100),
             allowNull:true
         },
-        tipo_item:{
+        autor_item:{
             type:Sequelize.STRING(100),
+            allowNull:true
+        },
+        descricao_item:{
+            type:Sequelize.STRING(500),
             allowNull:true
         },
     }

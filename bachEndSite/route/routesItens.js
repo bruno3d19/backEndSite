@@ -13,13 +13,14 @@ router.get('/', (req, res)=>{
 
 router.post('/inserirItem', (req, res)=>{
 
-    let { cod_item, nome_item, tipo_item } = req.body;
+    let { cod_item, nome_item, autor_item, descricao_item } = req.body;
 
     modelItens.create(
         {
            cod_item,
            nome_item,
-           tipo_item
+           autor_item,
+           descricao_item
         }
     )
     .then(
