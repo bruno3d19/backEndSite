@@ -3,7 +3,7 @@ const Sequelize = require('sequelize');
 const connection = require('../database/database');
 
 const modelCadastro = connection.define(
-    'tbl_cadastro',
+    'tbl_cadastros',
     {
         cod_cadastro:{
             type:Sequelize.INTEGER,
@@ -17,6 +17,6 @@ const modelCadastro = connection.define(
     }
 );
 
-// modelCadastro.sync({force:true});
+ modelCadastro.sync({force:true});
 
 module.exports = modelCadastro;

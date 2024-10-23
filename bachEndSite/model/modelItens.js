@@ -10,7 +10,7 @@ const modelItens = connection.define(
             primaryKey:true,
             autoIncrement:true
         },
-        cod_categoria:{
+        cod_cadastro:{
             type: Sequelize.INTEGER,
             allowNull: false
         },
@@ -29,6 +29,6 @@ const modelItens = connection.define(
     }
 );
 
- //modelItens.sync({force:true});
+modelItens.sync({force:true});
 
 module.exports = modelItens;

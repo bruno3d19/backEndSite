@@ -13,11 +13,11 @@ router.get('/', (req, res)=>{
 
 router.post('/inserirItem', (req, res)=>{
 
-    let { cod_item, nome_item, autor_item, descricao_item } = req.body;
+    let { cod_cadastro, nome_item, autor_item, descricao_item } = req.body;
 
     modelItens.create(
         {
-           cod_item,
+           cod_cadastro,
            nome_item,
            autor_item,
            descricao_item
@@ -132,12 +132,13 @@ router.delete('/excluirItem/:cod_item', (req, res)=>{
 
 router.put('/alterarItem', (req, res)=>{
 
-    let { nome_item,tipo_item } = req.body;
+    let { nome_item, autor_item, descricao_item } = req.body;
 
     modelItens.update(
         {
             nome_item,
-            tipo_item
+            autor_item,
+           descricao_item
         },
         {where:{cod_item}}
     ).then(
