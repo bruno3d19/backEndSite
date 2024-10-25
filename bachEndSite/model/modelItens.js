@@ -2,6 +2,8 @@ const Sequelize = require('sequelize');
 
 const connection = require('../database/database');
 
+const modelCadastro = ('./modelCadastro');
+
 const modelItens = connection.define(
     'tbl_Itens',
     {
@@ -28,6 +30,18 @@ const modelItens = connection.define(
         },
     }
 );
+
+/*Implementação da  CHAVE ESTRANGEIRA - LADO N*/
+modelCadastro.hasMany(modelItens, {
+    foreignKey: 'cod_cadastro',
+    sourceKey: 'cod_cadastro'
+});
+
+/*Implementação da  CHAVE PRIMÁRIA - LADO 1*/
+modelItens.belongsTo(modelCadastro, {
+    foreignKey: 'cod_cadastro',
+    sourceKey: 'cod_cadastro'
+});
 
 modelItens.sync({force:true});
 
