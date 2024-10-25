@@ -2,7 +2,7 @@ const Sequelize = require('sequelize');
 
 const connection = require('../database/database');
 
-const modelCadastro = ('./modelCadastro');
+const modelCadastro = require ('./modelCadastro');
 
 const modelItens = connection.define(
     'tbl_Itens',
