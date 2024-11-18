@@ -132,7 +132,7 @@ router.delete('/excluirItem/:cod_item', (req, res)=>{
 
 router.put('/alterarItem', (req, res)=>{
 
-    let { nome_item, autor_item, descricao_item } = req.body;
+    let { cod_item, nome_item, autor_item, descricao_item } = req.body;
 
     modelItens.update(
         {
